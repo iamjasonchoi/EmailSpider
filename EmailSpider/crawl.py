@@ -50,20 +50,22 @@ def gettiebalist(name):
 
 #获取页面信息
 def getresponse(url):
-    print('start request')
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36'
     }
     request = urllib.request.Request(url, headers=headers)
     request.add_header('Connection', 'keep-alive')
-    response = urllib.request.urlopen(request,15)
-    print('end request')
+    try:
+        response = urllib.request.urlopen(request,timeout = 15)
+    except:
+        print('time out')
     data = None
     try:
         data = response.read().decode('utf-8', "ignore")
     except UnicodeDecodeError:
         data = response.read()
     except:
+        data=""
         time.sleep(15)
     return data
 

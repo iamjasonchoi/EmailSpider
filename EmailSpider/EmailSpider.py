@@ -19,16 +19,20 @@ def getmail(name):
         page_re_str = '共<span class="red">(\d+)</span>页</li>'
         page_re_gex = re.compile(page_re_str, re.IGNORECASE)
         page_re_list = []
-        try:
-            page_re_list = re.findall(page_re_gex, data)
-        except TypeError:
-            page_re_list = re.findall(page_re_gex, data.decode())
-        print(intro_url)
-        print(page_re_list)
-        if len(page_re_list) > 0:
-            page = eval(page_re_list[0])
+        if data != None:
+            try:
+                page_re_list = re.findall(page_re_gex, data)
+            except TypeError:
+                page_re_list = re.findall(page_re_gex, data.decode())
+            print(intro_url)
+            print(page_re_list)
+            if len(page_re_list) > 0:
+                page = eval(page_re_list[0])
+            else:
+                print('帖子被隐藏，跳过')
+                continue
         else:
-            print('帖子被隐藏，跳过')
+            print('获取帖子失败')
             continue
         print(page)
         for i in range(page):
@@ -62,7 +66,7 @@ def getmail(name):
 
 
 def main():
-    barName = urllib.parse.quote("mobi")
+    barName = urllib.parse.quote("考研资料")
     getmail(barName)
 
 
