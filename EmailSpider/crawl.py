@@ -44,7 +44,8 @@ def gettiebalist(name):
         url_list.append(url)
 
         number += 1
-        if number_tuple[2] - total < 50:
+        #最多获取每个贴吧前15页内容
+        if number_tuple[2] - total < 50 or total > 750:
             break
     return url_list
 

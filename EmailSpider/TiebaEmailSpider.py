@@ -6,7 +6,8 @@ import time
 import crawl
 
 
-def getmail(name):
+def getmail(real_name):
+    name = urllib.parse.quote(line.replace('\n',''))
     emailCount = 0
     mail_restr = r'([A-Za-z0-9_+]+@[A-Za-z0-9]+\.[A-Za-z]{2,6})'
     mail_dirty = r'(u[A-Fa-f0-9]{4}[A-Za-z0-9_+]+@[A-Za-z0-9]+\.[A-Za-z]{2,6})'
@@ -66,7 +67,7 @@ def getmail(name):
                     emailCount += 1
                 fileObject.close()
             time.sleep(2)
-            print('当前有效邮箱爬取数：')
+            print(real_name + '-当前有效邮箱爬取数：')
             print(emailCount)
             print('=' * 20)
     print('爬取结束')
@@ -88,9 +89,8 @@ def main():
                 if isExist:
                     continue
 
-                barName = urllib.parse.quote(line.replace('\n',''))
                 nameList = nameList + crawl.getFriendshipBar(line.replace('\n',''))
-                getmail(barName)
+                getmail(line)
 
                 with open('crawledBarName.txt','a') as crawledName:
                     crawledName.write(line)

@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>0ec4c156-e156-4152-9e84-57aea9990994</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>EmailSpider.py</StartupFile>
+    <StartupFile>TiebaEmailSpider.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,11 +24,11 @@
     <Compile Include="crawl.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="EmailSpider.py" />
+    <Compile Include="TiebaEmailSpider.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="barName.txt" />
-    <Content Include="crawledBarNametxt.txt" />
+    <Content Include="crawledBarName.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
