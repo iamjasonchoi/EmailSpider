@@ -13,7 +13,7 @@ def gettiebalistnumbers(name):
     word = parse.urlencode(word)
     url = url + word
     data = getresponse(url)
-    # data = data.replace('<!--', '').replace('-->', '')
+
     guanzhu_restr = '<span class="card_menNum">([\s\S]*?)</span>'
     guanzhu_regex = re.compile(guanzhu_restr, re.IGNORECASE)
     guanzhu_list = re.findall(guanzhu_regex, data)
@@ -89,12 +89,29 @@ def gettiezilist(name):
             print(href_list)
             intro_url = 'http://tieba.baidu.com/p/' + href_list[0]
             intro_url_list.append(intro_url)
-        #抓取前10页
-        if flag > 10:
+        #抓取前5页
+        if flag > 5:
             break
         else :
             flag+=1
          #time.sleep(1)
     return intro_url_list
 
+#获取友情贴吧
+def getFriendshipBar(name):
+    url = 'http://tieba.baidu.com/f?'
+    word = {
+            'kw': name,
+            'pn': 0
+            }
+    word = parse.urlencode(word)
+    url = url + word
+    data = getresponse(url)
 
+    friendReStr = 'kw=([\S\s]{0,10}?)&frs'
+    friendshipRegex = re.compile(friendReStr,re.IGNORECASE)
+    friendBarList = re.findall(friendshipRegex,data)
+    friendBarList = list(set(friendBarList))
+    if name in friendBarList:
+        friendBarList.remove(name)
+    return friendBarList
