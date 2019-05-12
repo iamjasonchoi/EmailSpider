@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TiebaEmailSpider", "EmailSpider\TiebaEmailSpider.pyproj", "{0EC4C156-E156-4152-9E84-57AEA9990994}"
-EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "DoubanEmailSpider", "DoubanEmailSpider\DoubanEmailSpider.pyproj", "{3CF675DD-06FB-4F54-97ED-67A0FA92C0B8}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "BaiduTiebaEmailSpider", "BaiduTiebaEmailSpider\BaiduTiebaEmailSpider.pyproj", "{DF798B5C-60F3-42A9-AAC3-E021CF62941F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,10 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0EC4C156-E156-4152-9E84-57AEA9990994}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0EC4C156-E156-4152-9E84-57AEA9990994}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CF675DD-06FB-4F54-97ED-67A0FA92C0B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3CF675DD-06FB-4F54-97ED-67A0FA92C0B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF798B5C-60F3-42A9-AAC3-E021CF62941F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF798B5C-60F3-42A9-AAC3-E021CF62941F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
